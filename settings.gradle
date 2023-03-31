@@ -16,6 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+plugins {
+    id 'com.gradle.enterprise' version '3.12.6'
+    id 'com.gradle.common-custom-user-data-gradle-plugin' version '1.10'
+}
+
+def isCI = System.getenv('CI') != null // adjust to your CI provider
+
+gradleEnterprise {
+    server = 'https://ec2-54-167-52-208.compute-1.amazonaws.com' // adjust to your GE server
+    allowUntrustedServer = true
+
+    
+    buildScan {
+        capture { taskInputFiles = true }
+        uploadInBackground = !isCI
+        publishAlways()
+    }
+}
+
 
 include \
   'docs',

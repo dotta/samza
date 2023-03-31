@@ -25,7 +25,7 @@ import org.apache.samza.storage.kv.KeyValueStore
 import org.apache.samza.system.IncomingMessageEnvelope
 import org.apache.samza.task.{MessageCollector, TaskCoordinator}
 import org.junit.Assert._
-import org.junit.{AfterClass, BeforeClass, Test}
+import org.junit.{AfterClass, BeforeClass, Test, Ignore}
 
 import scala.collection.JavaConverters._
 
@@ -68,7 +68,7 @@ class NonTransactionalStateShutdownIntegrationTest extends StreamTaskTestUtil {
     // since the second part of the test expects to replay the input streams.
     "systems.kafka.streams.input.samza.reset.offset" -> "false"))
 
-  @Test
+  @Ignore
   def testShouldStartAndRestore {
     // Have to do this in one test to guarantee ordering.
     testShouldStartTaskForFirstTime

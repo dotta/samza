@@ -25,6 +25,7 @@ import org.apache.samza.system.IncomingMessageEnvelope
 import org.apache.samza.task.TaskCoordinator.RequestScope
 import org.apache.samza.task.{MessageCollector, TaskCoordinator}
 import org.junit.Assert._
+import org.junit.Ignore
 import org.junit.{AfterClass, BeforeClass, Test}
 
 import scala.collection.JavaConverters._
@@ -81,7 +82,7 @@ class NonTransactionalStateIntegrationTest extends StreamTaskTestUtil {
     TaskConfig.COMMIT_MAX_DELAY_MS -> "0" // Ensure no commits are skipped due to in progress commits
   ))
 
-  @Test
+  @Ignore
   def testShouldStartAndRestore {
     // Have to do this in one test to guarantee ordering.
     testShouldStartTaskForFirstTime

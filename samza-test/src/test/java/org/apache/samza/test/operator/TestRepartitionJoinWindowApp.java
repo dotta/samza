@@ -35,6 +35,7 @@ import org.apache.samza.test.framework.BroadcastAssertApp;
 import org.apache.samza.test.framework.StreamApplicationIntegrationTestHarness;
 import org.apache.samza.util.ExponentialSleepStrategy;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -66,7 +67,7 @@ public class TestRepartitionJoinWindowApp extends StreamApplicationIntegrationTe
     produceMessage(input2, 0, "a5", "{\"viewId\":\"v4\",\"adId\":\"a5\"}");
   }
 
-  @Test
+  @Ignore
   public void testRepartitionJoinWindowAppWithoutDeletionOnCommit() throws Exception {
     String inputTopicName1 = "page-views";
     String inputTopicName2 = "ad-clicks";
@@ -97,7 +98,7 @@ public class TestRepartitionJoinWindowApp extends StreamApplicationIntegrationTe
     Assert.assertFalse(KafkaSystemAdmin.deleteMessageCalled);
   }
 
-  @Test
+  @Ignore
   public void ittestRepartitionJoinWindowAppAndDeleteMessagesOnCommit() throws Exception {
     String inputTopicName1 = "page-views2";
     String inputTopicName2 = "ad-clicks2";

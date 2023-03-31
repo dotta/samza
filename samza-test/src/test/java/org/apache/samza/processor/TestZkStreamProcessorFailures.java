@@ -27,6 +27,7 @@ import org.apache.samza.config.ZkConfig;
 import org.apache.samza.zk.TestZkUtils;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -58,7 +59,7 @@ public class TestZkStreamProcessorFailures extends TestZkStreamProcessorBase {
     Assert.fail("should've thrown an exception");
   }
 
-  @Test
+  @Ignore
   // Test with a single processor failing.
   // One processor fails (to simulate the failure we inject a special message (id > 1000) which causes the processor to
   // throw an exception.

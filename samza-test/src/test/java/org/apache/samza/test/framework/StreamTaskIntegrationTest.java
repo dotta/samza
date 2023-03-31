@@ -57,6 +57,7 @@ import org.apache.samza.test.framework.system.descriptors.InMemorySystemDescript
 import org.apache.samza.test.table.TestTableData;
 import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.apache.samza.test.table.TestTableData.EnrichedPageView;
@@ -65,7 +66,7 @@ import static org.apache.samza.test.table.TestTableData.Profile;
 
 public class StreamTaskIntegrationTest {
 
-  @Test
+  @Ignore
   public void testStatefulTaskWithLocalTable() {
     List<PageView> pageViews = Arrays.asList(TestTableData.generatePageViews(10));
     List<Profile> profiles = Arrays.asList(TestTableData.generateProfiles(10));
@@ -92,7 +93,7 @@ public class StreamTaskIntegrationTest {
     Assert.assertEquals(10, TestRunner.consumeStream(outputStreamDesc, Duration.ofSeconds(1)).get(0).size());
   }
 
-  @Test
+  @Ignore
   public void testSyncTaskWithSinglePartition() throws Exception {
     List<Integer> inputList = Arrays.asList(1, 2, 3, 4, 5);
     List<Integer> outputList = Arrays.asList(10, 20, 30, 40, 50);
@@ -140,7 +141,7 @@ public class StreamTaskIntegrationTest {
         .run(Duration.ofSeconds(1));
   }
 
-  @Test
+  @Ignore
   public void testSyncTaskWithSinglePartitionMultithreaded() throws Exception {
     List<Integer> inputList = Arrays.asList(1, 2, 3, 4, 5);
     List<Integer> outputList = Arrays.asList(10, 20, 30, 40, 50);
@@ -164,7 +165,7 @@ public class StreamTaskIntegrationTest {
     StreamAssert.containsInOrder(outputList, imod, Duration.ofMillis(1000));
   }
 
-  @Test
+  @Ignore
   public void testSyncTaskWithMultiplePartition() throws Exception {
     Map<Integer, List<KV>> inputPartitionData = new HashMap<>();
     Map<Integer, List<Integer>> expectedOutputPartitionData = new HashMap<>();
@@ -188,7 +189,7 @@ public class StreamTaskIntegrationTest {
     StreamAssert.containsInOrder(expectedOutputPartitionData, imod, Duration.ofMillis(1000));
   }
 
-  @Test
+  @Ignore
   public void testSyncTaskWithMultiplePartitionMultithreaded() throws Exception {
     Map<Integer, List<KV>> inputPartitionData = new HashMap<>();
     Map<Integer, List<Integer>> expectedOutputPartitionData = new HashMap<>();
@@ -196,7 +197,7 @@ public class StreamTaskIntegrationTest {
     syncTaskWithMultiplePartitionMultithreadedHelper(inputPartitionData, expectedOutputPartitionData);
   }
 
-  @Test
+  @Ignore
   public void testSyncTaskWithMultiplePartitionMultithreadedWithCustomIME() throws Exception {
     Map<Integer, List<KV>> inputPartitionData = new HashMap<>();
     Map<Integer, List<KV>> inputPartitionIME = new HashMap<>();

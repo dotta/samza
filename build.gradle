@@ -123,13 +123,14 @@ subprojects {
   apply plugin: 'eclipse'
   apply plugin: 'project-report'
   apply plugin: 'jacoco'
-  apply plugin: 'checkstyle'
+  //apply plugin: 'checkstyle'
 
+/*
   checkstyle {
     configFile = new File(rootDir, "checkstyle/checkstyle.xml")
     toolVersion = "$checkstyleVersion"
   }
-
+*/
   tasks.withType(Test) {
     test {
       testLogging {

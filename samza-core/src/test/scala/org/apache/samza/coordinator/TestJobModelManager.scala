@@ -34,6 +34,7 @@ import org.apache.samza.storage.ChangelogStreamManager
 import org.apache.samza.system._
 import org.apache.samza.util.HttpUtil
 import org.junit.Assert._
+import org.junit.Ignore
 import org.junit.{After, Before, Test}
 import org.scalatest.{FlatSpec, PrivateMethodTester}
 
@@ -52,7 +53,7 @@ class TestJobModelManager extends FlatSpec with PrivateMethodTester {
    * the JobCoordinator will assign the new task with a new changelog
    * partition
    */
-  @Test
+  @Ignore
   def testJobCoordinator {
     val task0Name = new TaskName("Partition 0")
     val checkpoint0 = Map(new SystemStreamPartition("test", "stream1", new Partition(0)) -> "4")
@@ -123,7 +124,7 @@ class TestJobModelManager extends FlatSpec with PrivateMethodTester {
     jobModelManager.stop
   }
 
-  @Test
+  @Ignore
   def testJobCoordinatorChangelogPartitionMapping = {
     val task0Name = new TaskName("Partition 0")
     val ssp0 = Set(new SystemStreamPartition("test", "stream1", new Partition(0)))

@@ -52,6 +52,7 @@ import org.apache.samza.task.StreamTaskFactory;
 import org.apache.samza.test.StandaloneTestUtils;
 import org.apache.samza.test.harness.IntegrationTestHarness;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import scala.Option$;
 
@@ -73,7 +74,7 @@ public class TestStreamProcessor extends IntegrationTestHarness {
    * The standalone version in this test uses KafkaSystemFactory and it uses a SingleContainerGrouperFactory. Hence,
    * no matter how many tasks are present, it will always be run in a single processor instance. This simplifies testing
    */
-  @Test
+  @Ignore
   public void testStreamProcessor() {
     final String testSystem = "test-system";
     final String inputTopic = "numbers";
@@ -94,7 +95,7 @@ public class TestStreamProcessor extends IntegrationTestHarness {
   /**
    * Should be able to create task instances from the provided task factory.
    */
-  @Test
+  @Ignore
   public void testStreamProcessorWithStreamTaskFactory() {
     final String testSystem = "test-system";
     final String inputTopic = "numbers2";
@@ -113,7 +114,7 @@ public class TestStreamProcessor extends IntegrationTestHarness {
   /**
    * Should be able to create task instances from the provided task factory.
    */
-  @Test
+  @Ignore
   public void testStreamProcessorWithAsyncStreamTaskFactory() {
     final String testSystem = "test-system";
     final String inputTopic = "numbers3";

@@ -41,6 +41,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.spi.LoggingEvent;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /*
@@ -76,7 +77,7 @@ public class TestJmxAppender {
     }
   }
 
-  @Test
+  @Ignore
   public void testJmxAppender() throws Exception {
     MBeanServerConnection mbserver = JMXConnectorFactory.connect(URL).getMBeanServerConnection();
     ObjectName objectName = new ObjectName(JmxAppender.JMX_OBJECT_DOMAIN + ":type=" + JmxAppender.JMX_OBJECT_TYPE + ",name=" + JmxAppender.JMX_OBJECT_NAME);

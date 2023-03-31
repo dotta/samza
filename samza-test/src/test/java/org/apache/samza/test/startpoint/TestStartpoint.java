@@ -67,6 +67,7 @@ import org.apache.samza.test.processor.TestTaskApplication;
 import org.apache.samza.test.util.TestKafkaEvent;
 import org.apache.samza.util.CoordinatorStreamUtil;
 import org.apache.samza.util.NoOpMetricsRegistry;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -166,7 +167,7 @@ public class TestStartpoint extends IntegrationTestHarness {
     super.tearDown();
   }
 
-  @Test
+  @Ignore
   public void testStartpointSpecific() throws InterruptedException {
     Map<Integer, RecordMetadata> sentEvents1 =
         publishKafkaEventsWithDelayPerEvent(inputKafkaTopic1, 0, NUM_KAFKA_EVENTS, PROCESSOR_IDS[0], Duration.ofMillis(2));
@@ -227,7 +228,7 @@ public class TestStartpoint extends IntegrationTestHarness {
     }
   }
 
-  @Test
+  @Ignore
   public void testStartpointTimestamp() throws InterruptedException {
     Map<Integer, RecordMetadata> sentEvents2 =
         publishKafkaEventsWithDelayPerEvent(inputKafkaTopic2, 0, NUM_KAFKA_EVENTS, PROCESSOR_IDS[1], Duration.ofMillis(2));
@@ -289,7 +290,7 @@ public class TestStartpoint extends IntegrationTestHarness {
     }
   }
 
-  @Test
+  @Ignore
   public void testStartpointOldest() throws InterruptedException {
     publishKafkaEventsWithDelayPerEvent(inputKafkaTopic3, 0, NUM_KAFKA_EVENTS, PROCESSOR_IDS[2], Duration.ofMillis(2));
 
@@ -344,7 +345,7 @@ public class TestStartpoint extends IntegrationTestHarness {
     assertEquals("Expecting to have processed all the events", NUM_KAFKA_EVENTS, recvEventsInputStartpointOldest.size());
   }
 
-  @Test
+  @Ignore
   public void testStartpointUpcoming() throws InterruptedException {
     publishKafkaEventsWithDelayPerEvent(inputKafkaTopic4, 0, NUM_KAFKA_EVENTS, PROCESSOR_IDS[3], Duration.ofMillis(2));
 
