@@ -90,3 +90,9 @@ gradle.taskGraph.whenReady { taskGraph ->
     }
   }
 }
+
+buildCache {
+  local {
+    enabled = !System.getenv().containsKey("CI")
+  }
+}
